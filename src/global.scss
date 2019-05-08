@@ -9,3 +9,25 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+input::-webkit-input-placeholder {
+  padding-left: 2.1rem;
+  font-weight: bold;
+}
+
+input {
+  margin-right: 2.5rem;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+ion-input {
+  --padding-start: 1rem;
+}
+.ion-invalid.ion-touched ion-input {
+  border: solid 1px var(--ion-color-danger);
+}
+
+@font-face {
+  font-family: 'cocon';
+  src: url(./assets/Fonts/Cocon-Regular.ttf);
+}
