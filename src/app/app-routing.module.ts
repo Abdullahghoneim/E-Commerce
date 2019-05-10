@@ -16,6 +16,11 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: './components/signin/signin.module#SigninPageModule'
+  },
+  {
+    path: 'home/lastProducts/:id',
+    loadChildren:
+      './home/last-products/product-details/product-details.module#ProductDetailsPageModule'
   }
 ];
 

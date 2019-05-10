@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth.guard';
+import { ProductsService } from './services/products.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { AuthGuard } from './services/auth.guard';
   ],
   providers: [
     StatusBar,
+    ProductsService,
     SplashScreen,
     AuthService,
     AuthGuard,

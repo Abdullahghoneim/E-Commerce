@@ -20,7 +20,7 @@ export class SigninComponent implements OnInit {
   onSignin(data: NgForm) {
     this.authService.login(data.value.email, data.value.password).subscribe(
       result => {
-        localStorage.setItem('token',result.token)
+        localStorage.setItem('token', result.token);
         this.router.navigate(['']);
       },
       err => {

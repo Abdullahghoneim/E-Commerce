@@ -14,7 +14,30 @@ import { HomePage } from './home.page';
     RouterModule.forChild([
       {
         path: '',
-        component: HomePage
+        component: HomePage,
+        children: [
+          {
+            path: '',
+            redirectTo: 'lastProducts'
+          },
+          {
+            path: 'lastProducts',
+            loadChildren:
+              './last-products/last-products.module#LastProductsPageModule'
+          },
+          {
+            path: 'search',
+            loadChildren: './search/search.module#SearchPageModule'
+          },
+          {
+            path: 'cart',
+            loadChildren: './cart/cart.module#CartPageModule'
+          },
+          {
+            path: 'categories',
+            loadChildren: './categories/categories.module#CategoriesPageModule'
+          }
+        ]
       }
     ])
   ],
