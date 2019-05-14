@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-grid *ngIf="!showSkelton">
     <ion-row>
       <ion-col>
         <div text-center>
@@ -17,10 +17,109 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="6" class="ion-margin-top" offset="3">
+      <ion-col size="6" class="ion-margin-top ion-margin-bottom" offset="3">
         <ion-img [src]="product?.imageUrl"></ion-img>
       </ion-col>
     </ion-row>
-    <ion-col> </ion-col>
+    <ion-row>
+      <ion-col size="8" offset="2">
+        <ion-segment (ionChange)="segmentChanged($event)">
+          <ion-segment-button checked="true" value="product">
+            <ion-label>Product</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="details">
+            <ion-label>Details</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="reviews">
+            <ion-label>Reviews</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" *ngIf="showProduct" class="ion-margin-top" padding>
+        Product
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" *ngIf="showDetails" class="ion-margin-top" padding>
+        Details
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" *ngIf="showReview" class="ion-margin-top" padding>
+        Reviews
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button shape="round" class="share" color="ligth">
+          SHARE THIS
+          <ion-icon slot="end" name="arrow-round-up"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button shape="round">
+          ADD TO CART
+          <ion-icon
+            slot="end"
+            color="primary"
+            name="arrow-round-forward"
+          ></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
   </ion-grid>
+  <!-- Skeleton screen -->
+  <div class="custom-skeleton" *ngIf="showSkelton" padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div text-center>
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div text-center>
+            <ion-skeleton-text
+              style="width: 100%; height: 7rem"
+              animated
+            ></ion-skeleton-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="8" offset="2">
+          <div text-center>
+            <ion-skeleton-text
+              style="width: 100%; height: 3rem"
+              animated
+            ></ion-skeleton-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-skeleton-text
+            shape="round"
+            style="width: 100%; height: 3rem"
+            animated
+          ></ion-skeleton-text>
+        </ion-col>
+        <ion-col>
+          <ion-skeleton-text
+            shape="round"
+            style="width: 100%; height: 3rem"
+            animated
+          ></ion-skeleton-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <!-- <ion-skeleton-text
+    style="width: 100%; height: 5rem"
+    animated
+  ></ion-skeleton-text> -->
 </ion-content>
