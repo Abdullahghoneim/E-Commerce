@@ -1,34 +1,37 @@
 <ion-content padding>
-  <ion-buttons slot="start">
-    <ion-back-button></ion-back-button>
-  </ion-buttons>
   <h3>All categories</h3>
   <ion-list class="ion-margin-top">
-    <ion-item>
-      <ion-avatar slot="start">
-        <ion-img
-          src="../../../assets/icon/iconfinder_beauty_hand_drawn_icon_illustration_-12_3249838.svg"
-        ></ion-img>
+    <ion-item button [routerLink]="['/apparel']">
+      <ion-avatar class="apparel" slot="start">
+        <ion-img src="../../../assets/icon/fashion.svg"></ion-img>
       </ion-avatar>
-
+      <ion-label> Apparel </ion-label>
+    </ion-item>
+    <ion-item button [routerLink]="['/beauty']">
+      <ion-avatar class="beauty" slot="start">
+        <ion-img src="../../../assets/icon/lipstick.svg"></ion-img>
+      </ion-avatar>
       <ion-label>Beauty</ion-label>
     </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <ion-img
-          src="../../../assets/icon/iconfinder_Shoes_1_753878.svg"
-        ></ion-img>
+    <ion-item button [routerLink]="['/shoes']">
+      <ion-avatar class="shoes" slot="start">
+        <ion-img src="../../../assets/icon/high-heel.svg"></ion-img>
       </ion-avatar>
       <ion-label>shoes</ion-label>
     </ion-item>
-    <ion-item>
-      <ion-label>The Legend of Zelda</ion-label>
+    <ion-item button>
+      <ion-avatar class="com" slot="start">
+        <ion-img
+          src="../../../assets/icon/notebook-and-mouse-cursor.svg"
+        ></ion-img>
+      </ion-avatar>
+      <ion-label> Computer Devices </ion-label>
     </ion-item>
-    <ion-item>
-      <ion-label>Pac-Man</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Super Mario World</ion-label>
+    <ion-item button>
+      <ion-avatar class="mobo" slot="start">
+        <ion-img src="../../../assets/icon/icon.svg"></ion-img>
+      </ion-avatar>
+      <ion-label>Mobile Devices</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -21,7 +21,16 @@ const routes: Routes = [
     path: 'home/lastProducts/:id',
     loadChildren:
       './home/last-products/product-details/product-details.module#ProductDetailsPageModule'
-  }
+  },
+  {
+    path: 'apparel',
+    loadChildren: './catago/apparel/apparel.module#ApparelPageModule'
+  },
+  {
+    path: 'beauty',
+    loadChildren: './catago/beauty/beauty.module#BeautyPageModule'
+  },
+  { path: 'shoes', loadChildren: './catago/shoes/shoes.module#ShoesPageModule' }
 ];
 
 @NgModule({

@@ -2,19 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
-  selector: 'app-last-products',
-  templateUrl: './last-products.page.html',
-  styleUrls: ['./last-products.page.scss']
+  selector: 'app-apparel',
+  templateUrl: './apparel.page.html',
+  styleUrls: ['./apparel.page.scss']
 })
-export class LastProductsPage implements OnInit {
-  products;
+export class ApparelPage implements OnInit {
+  apparelProducts;
   showSkelton = true;
   constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
-    this.productsService.getProducts.subscribe(
-      products => {
-        this.products = products;
+    this.productsService.getApparel.subscribe(
+      apparel => {
+        this.apparelProducts = apparel;
         this.showSkelton = false;
       },
       err => {

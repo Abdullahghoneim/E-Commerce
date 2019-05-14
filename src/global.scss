@@ -18,7 +18,7 @@ input::-webkit-input-placeholder {
 input {
   margin-right: 2.5rem;
   font-weight: bold;
-  padding-left: 1rem;
+  padding-left: 2rem;
 }
 ion-input {
   --padding-start: 1rem;
@@ -30,4 +30,8 @@ ion-input {
 @font-face {
   font-family: 'cocon';
   src: url(./assets/Fonts/Cocon-Regular.ttf);
+}
+
+a {
+  text-decoration: none;
 }

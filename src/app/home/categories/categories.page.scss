@@ -1,3 +1,27 @@
-ion-avater div {
-  padding: 5px;
+// ion-avater div {
+//   padding: 5px;
+// }
+ion-avatar.shoes {
+  background: #91ee4b;
+}
+
+ion-avatar.apparel {
+  background: #ff9460;
+}
+ion-avatar.beauty {
+  background: #6abafe;
+}
+ion-avatar {
+  width: 4rem;
+  height: 4rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+ion-avatar.mobo {
+  background: #4c3ffd;
+}
+ion-avatar.com {
+  background: #755128;
+}
+ion-label {
+  padding: 2rem;
 }

@@ -1,75 +1,59 @@
-<ion-content>
-  <div padding>
-    <h3>Categories</h3>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <a href="" [routerLink]="['/apparel']">
-            <ion-avatar class="apparel">
-              <div>
-                <ion-img src="../../../assets/icon/fashion.svg"></ion-img>
-              </div>
-              <ion-label color="primary">Apparel</ion-label>
-            </ion-avatar>
-          </a>
-        </ion-col>
-        <ion-col>
-          <a href="" [routerLink]="['/beauty']">
-            <ion-avatar class="beauty">
-              <div>
-                <ion-img src="../../../assets/icon/lipstick.svg"></ion-img>
-              </div>
-              <ion-label>Beauty</ion-label>
-            </ion-avatar>
-          </a>
-        </ion-col>
-        <ion-col>
-          <a href="" [routerLink]="['/shoes']">
-            <ion-avatar class="shoes">
-              <div>
-                <ion-img src="../../../assets/icon/high-heel.svg"></ion-img>
-              </div>
-              <ion-label>Shoes</ion-label>
-            </ion-avatar>
-          </a>
-        </ion-col>
-        <ion-col>
-          <a href="" [routerLink]="['/home/categories']">
-            <ion-avatar>
-              <div>
-                <ion-img
-                  src="../../../assets/icon/arrow-point-to-right.svg"
-                ></ion-img>
-              </div>
-              <ion-label>See All</ion-label>
-            </ion-avatar>
-          </a>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Apparel Categorie</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <div class="ion-margin-top" padding>
-    <h3>Latest</h3>
-    <ion-grid>
-      <ion-row *ngIf="!showSkelton">
-        <ion-col size="6" *ngFor="let product of products">
-          <a href="" [routerLink]="['/home/lastProducts/', product._id]">
-            <ion-card>
-              <ion-img [src]="product.imageUrl"></ion-img>
-              <ion-card-content>
-                <ion-card-subtitle> {{ product.name }} </ion-card-subtitle>
-                {{ product.price | currency }}
-              </ion-card-content>
-            </ion-card>
-          </a>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+<ion-content>
+  <ion-grid>
+    <ion-row *ngIf="!showSkelton">
+      <ion-col size="6" *ngFor="let product of apparelProducts">
+        <ion-card [routerLink]="['/home/lastProducts/', product._id]">
+          <ion-img [src]="product.imageUrl"></ion-img>
+          <ion-card-content>
+            <ion-card-subtitle> {{ product.name }} </ion-card-subtitle>
+            {{ product.price | currency }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <!-- Skeleton screen -->
   <div class="custom-skeleton" *ngIf="showSkelton">
     <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <ion-skeleton-text
+              style="width: 100%; height: 5rem"
+              animated
+            ></ion-skeleton-text>
+            <ion-card-content>
+              <ion-card-subtitle>
+                <ion-skeleton-text animated></ion-skeleton-text
+              ></ion-card-subtitle>
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <ion-skeleton-text
+              style="width: 100%; height: 5rem"
+              animated
+            ></ion-skeleton-text>
+            <ion-card-content>
+              <ion-card-subtitle>
+                <ion-skeleton-text animated></ion-skeleton-text
+              ></ion-card-subtitle>
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
       <ion-row>
         <ion-col size="6">
           <ion-card>

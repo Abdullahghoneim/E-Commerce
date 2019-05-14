@@ -5,9 +5,32 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   get getProducts() {
-    return this.http.get('http://localhost:3000/api/products');
+    return this.http.get(
+      'https://hidden-refuge-81494.herokuapp.com/api/products'
+    );
   }
   getProduct(id: string) {
-    return this.http.get(`http://localhost:3000/api/product/${id}`);
+    return this.http.get(
+      `https://hidden-refuge-81494.herokuapp.com/api/product/${id}`
+    );
+  }
+
+  // CETOGERYS
+  // // get apparel
+  get getApparel() {
+    return this.http.get(
+      'https://hidden-refuge-81494.herokuapp.com/api/products/apparel'
+    );
+  }
+  get getBeauty() {
+    return this.http.get(
+      'https://hidden-refuge-81494.herokuapp.com/api/products/beauty'
+    );
+  }
+
+  get getShoes() {
+    return this.http.get(
+      'https://hidden-refuge-81494.herokuapp.com/api/products/shoes'
+    );
   }
 }
