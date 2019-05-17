@@ -15,6 +15,13 @@ export class ProductsService {
     );
   }
 
+  // SEARCH PRODUCTS
+  searchProducts(term) {
+    return this.http.get(
+      `https://hidden-refuge-81494.herokuapp.com/api/products/search/${term}`
+    );
+  }
+
   // CETOGERYS
   // // get apparel
   get getApparel() {
